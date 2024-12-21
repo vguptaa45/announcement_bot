@@ -1,0 +1,7 @@
+openai
+python-dotenv
+supabase
+flask
+PyPDF2
+requests
+pdfminer.six
