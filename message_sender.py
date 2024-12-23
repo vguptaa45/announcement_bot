@@ -19,7 +19,7 @@ class AnnouncementMessageSender:
         self.app_name = os.getenv("GUPSHUP_APP_NAME")
         self.source = "919920660174"
         self.base_url = "https://api.gupshup.io/wa/api/v1"
-        self.template_id = "2f891418-a124-44ee-b645-69e13bf11e9d"
+        self.template_id = "0c049490-a8ee-4398-b871-09a89ff981fa"
 
     def _format_phone_number(self, phone: str) -> str:
         """Format phone number to match Gupshup requirements"""
@@ -88,10 +88,12 @@ class AnnouncementMessageSender:
                 return
 
             # Prepare template parameters with emoji in stock name
+            pdf_link = f"https://www.bseindia.com/xml-data/corpfiling/AttachLive/{announcement['pdf_name']}"
             template_params = [
                 stock_name,  # Header {{1}}
                 announcement['title'],  # Body {{1}}
-                announcement['summary']  # Body {{2}}
+                announcement['summary'],  # Body {{2}}
+                pdf_link  # Body {{3}} - PDF link
             ]
 
             logger.info(f"Sending announcement to {len(subscribers)} subscribers for {stock_name}")
