@@ -123,6 +123,7 @@ class QueueProcessor:
                                 announcement = {
                                     "stock_name": stock_name,
                                     "title": stock_data["title"],
+                                    "pdf_name": stock_data["pdf_name"],
                                     "summary": summary
                                 }
                                 
